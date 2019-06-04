@@ -1,4 +1,4 @@
-Oxford RSE Code Management: 
+Oxford RSE Code Management Course: 
 Git example
 Mathematical Institute
 Oxford

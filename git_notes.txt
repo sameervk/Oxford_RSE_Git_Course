@@ -1,0 +1,19 @@
+1). Central repositories should always be created as bare repositories because pushing branches to a non-bare repository has the potential to overwrite changes. Think of --bare as a way to mark a repository as a storage facility, as opposed to a development environment. This means that for virtually all Git workflows, the central repository is bare, and developers local repositories are non-bare.
+
+2). Cloning automatically creates a remote connection called "origin" pointing back to the original repository. This makes it very easy to interact with a central repository. 
+
+3). git clone -depth=1 <repo>
+
+Shallow clone: clone of <repo> is made and only the most recent commit is included in the new cloned Repo. Shallow cloning is most useful when working with repos that have an extensive commit history. 
+
+4). As in any revision control system, it’s important to create atomic commits so that it’s easy to track down bugs and revert changes with minimal impact on the rest of the project.
+
+5). git add -p
+
+Begin an interactive staging session that lets you choose portions of a file to add to the next commit. This will present you with a chunk of changes and prompt you for a command. Use y to stage the chunk, n to ignore the chunk, s to split it into smaller chunks, e to manually edit the chunk, and q to exit.
+
+6). git add .
+	git commit
+
+To create an initial commit of the current directory
+

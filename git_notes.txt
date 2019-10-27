@@ -17,3 +17,30 @@ Begin an interactive staging session that lets you choose portions of a file to 
 
 To create an initial commit of the current directory
 
+7) git commit --amend
+
+This option adds another level of functionality to the commit command. Passing this option will modify the last commit. Instead of creating a new commit, staged changes will be added to the previous commit. 
+
+8) Git doesn't require commit messages to follow any specific formatting constraints, but the canonical format is to summarize the entire commit on the first line in less than 50 characters, leave a blank line, then a detailed explanation of what’s been changed. For example:
+
+--
+Change the message displayed by hello.py
+
+- Update the sayHello() function to output the user's name
+- Change the sayGoodbye() function to a friendlier message
+--
+
+It is a common practice to use the first line of the commit message as a subject line, similar to an email. The rest of the log message is considered the body and used to communicate details of the commit change set. Note that many developers also like to use the present tense in their commit messages. This makes them read more like actions on the repository, which makes many of the history-rewriting operations more intuitive.
+
+9) git diff --cached ./path/to/file
+
+When git diff is invoked with the --cached option the diff will compare the staged changes with the local repository. The --cached option is synonymous with --staged.
+
+10) git diff branch1..other-feature-branch
+
+This example introduces the dot operator. The two dots in this example indicate the diff input is the tips of both branches. The same effect happens if the dots are omitted and a space is used between the branches.
+
+11) git diff master new_branch ./diff_test.txt
+
+To compare a specific file across branches, pass in the path of the file as the third argument to git diff
+

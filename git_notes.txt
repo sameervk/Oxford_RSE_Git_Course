@@ -105,4 +105,74 @@ This approach is more obvious, and less confusing, for your teammates.
 
 If you have complicated .gitignore patterns, or patterns spread over multiple .gitignore files, it can be difficult to track down why a particular file is being ignored. You can use the git check-ignore command with the -v (or --verbose) option to determine which pattern is causing a particular file to be ignored:
 
+23) Any files that you'd like to ignore should be included on a separate line in .gitignore, and the * symbol can be used as a wildcard
+
+24) git log -n <limit>
+
+Limit the number of commits by <limit>. For example, git log -n 3 will display only 3 commits.
+
+git log --stat
+
+Along with the ordinary git log information, include which files were altered and the relative number of lines that were added or deleted from each of them.
+
+git log -p
+
+Display the patch representing each commit. This shows the full diff of each commit, which is the most detailed view you can have of your project history.
+
+git log --author="<pattern>"
+
+Search for commits by a particular author. The <pattern> argument can be a plain string or a regular expression.
+
+git log --grep="<pattern>"
+
+Search for commits with a commit message that matches <pattern>, which can be a plain string or a regular expression.
+
+git log <since>..<until>
+
+Show only commits that occur between <since> and <until>. Both arguments can be either a commit ID, a branch name, HEAD, or any other kind of revision reference.
+
+git log --graph --decorate --oneline
+
+A few useful options to consider. The --graph flag that will draw a text based graph of the commits on the left hand side of the commit messages. --decorate adds the names of branches or tags of the commits that are shown. --oneline shows the commit information on a single line making it easier to browse through commits at-a-glance.
+
+25) git log --oneline master..some-feature
+
+The .. syntax is a very useful tool for comparing branches. The above displays a brief overview of all the commits that are in some-feature that are not in master.
+
+26) git log --author="John Smith" -p hello.py
+
+This will display a full diff of all the changes John Smith has made to the file hello.py.
+
+27) git tag <tagname>
+
+To create a new tag execute the following command:
+
+Tagging is generally used to capture a point in history that is used for a marked version release (i.e. v1.0.1). A tag is like a branch that doesn’t change.
+
+28) git log -S"CSS3D and WebGL renderers." --pretty=format:'%h %an %ad %s'
+
+To list all original commits in-which a specific code piece was added or modified execute git log with the -S option. 
+
+29) git checkout a1e8fb5
+
+This makes your working directory match the exact state of the a1e8fb5 commit. You can look at files, compile the project, run tests, and even edit files without worrying about losing the current state of the project. Nothing you do in here will be saved in your repository. To continue developing, you need to get back to the “current” state of your project:
+
+git checkout master
+
+30) Once changes have been committed they are generally permanent.
+    Use git checkout to move around and review the commit history.
+    git revert is the best tool for undoing shared public changes.
+    git reset is best used for undoing local private changes.
+
+31) The -n option will perform a “dry run” of git clean. This will show you which files are going to be removed without actually removing them. It is a best practice to always first perform a dry run of git clean. 
+
+32) -f or --force
+
+The force option initiates the actual deletion of untracked files from the current directory. Force is required unless the clean.requireForce configuration option is set to false.
+
+33) The -d option tells git clean that you also want to remove any untracked directories
+
+34) The -x option tells git clean to also include any ignored files.
+
+35) git clean has an "interactive" mode that you can initiate by passing the -i option
 

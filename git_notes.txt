@@ -191,35 +191,3 @@ A checkout will have the same effect and restore the latest version of a file fr
 The -r option is shorthand for 'recursive'. When operating in recursive mode git rm will remove a target directory and all the contents of that directory.
 
 39) A Git repository will recognize when a regular shell rm command has been executed on a file it is tracking. It will update the working directory to reflect the removal. It will not update the staging index with the removal. An additional git add command will have to be executed on the removed file paths to add the changes to the staging index. The git rm command acts a shortcut in that it will update the working directory and the staging index with the removal.
-
-40) The git commit --amend command is a convenient way to modify the most recent commit. It lets you combine staged changes with the previous commit instead of creating an entirely new commit. It can also be used to simply edit the previous commit message without changing its snapshot. But, amending does not just alter the most recent commit, it replaces it entirely, meaning the amended commit will be a new entity with its own ref. 
-
-41) git commit --amend --no-edit
-
-The --no-edit flag will allow you to make the amendment to your commit without changing its commit message.
-
-42) Don’t amend public commits
-
-Amended commits are actually entirely new commits and the previous commit will no longer be on your current branch. This has the same consequences as resetting a public snapshot. Avoid amending a commit that other developers have based their work on. 
-
-43) Git rebase gives you the power to modify your history, and interactive rebasing allows you to do so without leaving a “messy” trail. This creates the freedom to make and correct errors and refine your work, while still maintaining a clean, linear project history.
-
-44) Rebasing is a common way to integrate upstream changes into your local repository. rebasing is like saying, “I want to base my changes on what everybody has already done.”
-
-45) You should never rebase commits once they've been pushed to a public repository.
-
-
-46) git checkout -b feature_branch master 
-
-# Create a feature branch based off of master 
-
-47) git rebase --interactive <base>
-
-This rebases the current branch onto <base> but uses an interactive rebasing session.
-
-Running git rebase with the -i flag begins an interactive rebasing session. Instead of blindly moving all of the commits to the new base, interactive rebasing gives you the opportunity to alter individual commits in the process. This lets you clean up history by removing, splitting, and altering an existing series of commits.
-
-48) The real power of interactive rebasing can be seen in the history of the resulting master branch. To everybody else, it looks like you're a brilliant developer who implemented the new feature with the perfect amount of commits the first time around. This is how interactive rebasing can keep a project's history clean and meaningful.
-
-49)  Using git reflog these commits can be restored and the entire rebase can be undone.
-

@@ -223,3 +223,33 @@ Running git rebase with the -i flag begins an interactive rebasing session. Inst
 
 49)  Using git reflog these commits can be restored and the entire rebase can be undone.
 
+50)  git reset HEAD~1 --soft   
+
+That's it, your commit changes will be in your working directory, whereas the LAST commit will be removed from your current branch.
+
+51) Every reflog entry has a timestamp attached to it. These timestamps can be leveraged as the qualifier token of Git ref pointer syntax. This enables filtering Git reflogs by time. The following are some examples of available time qualifiers:
+
+    1.minute.ago
+    1.hour.ago
+    1.day.ago
+    yesterday
+    1.week.ago
+    1.month.ago
+    1.year.ago
+    2011-05-17.09:00:00
+    
+52) The git remote command lets you create, view, and delete connections to other repositories. Remote connections are more like bookmarks rather than direct links into other repositories.
+
+53) git remote -v
+
+Same as git remote, but include the URL of each connection.
+
+54) When downloading content from a remote repo, git pull and git fetch commands are available to accomplish the task. You can consider git fetch the 'safe' version of the two commands. It will download the remote content but not update your local repo's working state, leaving your current work intact. git pull is the more aggressive alternative, it will download the remote content for the active local branch and immediately execute git merge to create a merge commit for the new remote content.
+
+55) 
+
+
+
+
+
+

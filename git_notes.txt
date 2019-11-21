@@ -256,6 +256,36 @@ Tags are not automatically pushed when you push a branch or use the --all option
 
 56) A frequently used, modern Git practice is to have a remotely hosted --bare repository act as a central origin repository. This origin repository is often hosted off-site with a trusted 3rd party like Bitbucket. Since pushing messes with the remote branch structure, It is safest and most common to push to repositories that have been created with the --bare flag. Bare repos don’t have a working directory so a push will not alter any in progress working directory content.
 
+57) git log --graph --oneline 
 
+graph view
 
+58) To edit commit message for
 
+Not pushed + old commit:
+
+git rebase -i HEAD~X
+# X is the number of commits to go back
+# Move to the line of your commit, change pick into edit,
+# then change your commit message:
+git commit --amend
+# Finish the rebase with:
+git rebase --continue
+
+the commit in the command is the commit on which to rebase, i.e. it is the commit before the commit which needs to be edited.
+
+59) Before you can git pull, you need to have committed any changes you have made. If you find you want to pull, but you're not ready to commit, you have to temporarily "put aside" your uncommitted changes. For this, you can use the git stash command.
+
+60) Sometimes you end up creating various files that you do not want to include in version control. An easy way of deleting them (if that is what you want) is the git clean command, which will remove the files that git is not tracking.
+
+61) GitHub will publish repositories containing markdown as web pages, automatically. 
+
+You'll need to add this content:
+
+> ```
+>    ---
+>    ---
+> ```
+
+A pair of lines with three dashes, to the top of each markdown file. This is how GitHub knows which markdown files to make into web pages.
+[Here's why](https://jekyllrb.com/docs/front-matter/) for the curious. 
